@@ -1,0 +1,16 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // User Avatars & Profile Assets
+    match /users/{userId}/{allPaths=**} {
+      // Public read so avatars can display in social feeds and leaderboard
+      allow read: if true;
+      // Write allowed only for the profile owner, max 5MB, must be image
+      allow write: if request.auth != null 
+        && request.auth.uid == userId
+        && request.resource.size < 5 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "auth": {
+    "providers": {
+      "emailPassword": true,
+      "googleSignIn": {
+        "oAuthBrandDisplayName": "Recall",
+        "supportEmail": "isaacsobredilla120@gmail.com"
+      }
+    }
+  },
+  "firestore": {
+    "rules": "firestore.rules"
+  },
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "recall-ede0f",
+          "appId": "1:231431315497:android:f82a162e9c81401625fc38",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "recall-ede0f",
+          "configurations": {
+            "android": "1:231431315497:android:f82a162e9c81401625fc38",
+            "ios": "1:231431315497:ios:f57e0b49976bae5425fc38",
+            "macos": "1:231431315497:ios:f57e0b49976bae5425fc38",
+            "web": "1:231431315497:web:f665120c3b781c3b25fc38",
+            "windows": "1:231431315497:web:254ee4bf449b854e25fc38"
+          }
+        }
+      }
+    }
+  }
+}
